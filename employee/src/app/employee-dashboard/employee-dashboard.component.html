@@ -1,0 +1,55 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1>CRUD</h1>
+        <div class="diflex">
+            <button class="btn btn-success">ADD Employee</button>
+        </div>
+    </div>
+</nav>
+
+<!-- detail form starts here -->
+<form class="form-container" [formGroup]="formValue">
+    <div class="mb-3">
+        <label for="fname" class="form-label">First Name</label>
+        <input type="text" formControlName="firstName" class="form-control" id="fname">
+    </div>
+    <div class="mb-3">
+        <label for="lname" class="form-label">Last Name</label>
+        <input type="text" formControlName="lastName" class="form-control" id="lname">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" formControlName="email" class="form-control" id="email">
+    </div>
+    <button type="submit" *ngIf="showAdd" (click)="addEmployeeDetails()" class="btn btn-primary">ADD</button>
+    <button type="submit" *ngIf="showUpdate" (click)="updateEmployees()" class="btn btn-primary">Update</button>
+    <button type="submit" (click)="formRest()" id="cancel" class="btn btn-danger">Cancel</button>
+
+</form>
+<!-- detail form ends here -->
+
+<!-- Table starts here -->
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let info of employeeData">
+            <td>{{info.id}}</td>
+            <td>{{info.firstName}}</td>
+            <td>{{info.lastName}}</td>
+            <td>{{info.email}}</td>
+            <td>
+                <button (click)="editEmployees(info)" class="btn btn-info">Edit</button>
+                <button (click)="deleteEmployees(info)" class="btn btn-danger mx-3">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!-- Table ends here -->

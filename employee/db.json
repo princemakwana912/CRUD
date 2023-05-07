@@ -1,0 +1,26 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "firstName": "Prince",
+      "lastName": "Makwana",
+      "email": "rajpatel1680@gmail.com"
+    },
+    {
+      "id": 2,
+      "firstName": "Hello",
+      "lastName": "Bye",
+      "email": "hellobye@gmail.com"
+    },
+    {
+      "id": 3,
+      "firstName": "p",
+      "lastName": "Makwana",
+      "email": "awwse@gmail.com"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
